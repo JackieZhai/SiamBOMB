@@ -5,6 +5,7 @@
 import sys
 from os import system, path, listdir
 from copy import deepcopy
+import pickle
 from glob import glob
 from imutils.video import FPS
 import numpy as np
@@ -176,11 +177,6 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
             text = "SegMove: {:.2f} %/frame".format(mean_segmove * 100)
             cv2.putText(frame, text, (60, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 255), 2)
             cv2.putText(frame, mean_state_text, (60, 120), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
-            # text = "Trans: {:.2f} pixel/frame".format(mean_trans)
-            # cv2.putText(frame, text, (360, 370), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 255), 2)
-            # text = "SegMove: {:.2f} %/frame".format(mean_segmove * 100)
-            # cv2.putText(frame, text, (360, 400), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 255), 2)
-            # cv2.putText(frame, mean_state_text, (360, 430), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
 
         self.analysis_box[b][4] = center
         self.analysis_box[b][5] = mask
@@ -343,7 +339,7 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
                         text = "FPS: {:.2f}".format(fps_cal.fps())
                         cv2.putText(frame, text, (60, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
                 else:
-                    # 非处理中，延迟取帧：0.05s
+                    # delay for 0.05s
                     if (self.isPainting):
                         self.progressBar.setFormat('DRAW')
                     else:
@@ -469,7 +465,7 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
                     polygon = np.array(outputs['polygon']).astype(np.int32)
                     cv2.polylines(frame, [polygon.reshape((-1, 1, 2))],
                                   True, (0, 255, 0), 2)
-                    # mask label should be (255 - object selecting number)?
+                    # mask label should be (255 - object selecting number)
                     mask = ((outputs['mask'] > cfg.TRACK.MASK_THERSHOLD) * (255 - b))
                     mask = mask.astype(np.uint8)
                     if masks is None:
@@ -480,8 +476,8 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
                     polygon_ymean = (polygon[1] + polygon[3] + polygon[5] + polygon[7]) / 4
                     cv2.rectangle(frame, (int(polygon_xmean) - 1, int(polygon_ymean) - 1),
                                   (int(polygon_xmean) + 1, int(polygon_ymean) + 1), (0, 255, 0), 2)
-                    # self.behavior_analysis(frame, b,
-                    #                        (polygon_xmean, polygon_ymean), (mask > 0))
+                    self.behavior_analysis(frame, b,
+                                           (polygon_xmean, polygon_ymean), (mask > 0))
 
                     bbox = tuple(list(map(int, outputs['bbox'])))
                     self.bbox_list_predict[self.N].append(bbox)
@@ -490,13 +486,12 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
                 fps_cal.stop()
                 text = "FPS: {:.2f}".format(fps_cal.fps())
                 cv2.putText(frame, text, (60, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
-                # cv2.putText(frame, text, (360, 340), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 
                 if self.checkBox.checkState():
                     save_loc_i = save_loc_t + "/" + str(self.N).zfill(4) + ".jpg"
                     cv2.imwrite(save_loc_i, frame)
                     save_loc_m = save_loc_t + "/mask/" + str(self.N).zfill(4) + ".jpg"
-                    cv2.imwrite(save_loc_m, mask)
+                    cv2.imwrite(save_loc_m, masks)
                 self.label_image.setPixmap(QPixmap(self.cv2_to_qimge(frame)))
                 QApplication.processEvents()
             self.progressBar.setProperty('value', (self.N - self.INIT) * 100 / (self.F - 1 - self.INIT))
@@ -549,9 +544,13 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
                 for j in range(last_j):
                     frame = cv2.imread(save_loc_t + '/' + str(j).zfill(4) + ".jpg")
                     wri.write(frame)
-                    self.progressBar.setProperty('value', j * 100 / (last_j - 1))
-                    self.progressBar.setFormat('SAVE: %p% [{:d}/{:d}]'.format(j, last_j - 1))
+                    self.progressBar.setProperty('value', j * 100 / (last_j))
+                    self.progressBar.setFormat('SAVE: %p% [{:d}/{:d}]'.format(j, last_j))
                     QApplication.processEvents()
+                pickle.dump(self.analysis_box, open(save_loc_t + '/analysis.pkl', 'wb'), protocol=4)
+                self.progressBar.setProperty('value', last_j * 100 / (last_j))
+                self.progressBar.setFormat('SAVE: %p% [{:d}/{:d}]'.format(last_j, last_j))
+                QApplication.processEvents()
                 wri.release()
                 self.pushButton_bboxSetting.setText('&B-box Setting')
                 QApplication.processEvents()
