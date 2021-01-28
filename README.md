@@ -81,7 +81,7 @@ python window_running.py
 
 <p align="center"><img src="README/demo6.png" width="400"></p>
 
-* Top-left shows output messages including Behavior Analysis. Middle-Right SpinBox for selecting from multiple target.
+* Top-left shows output messages including Behavior Analysis. Middle-Right SpinBox for selecting from multiple target, note that the number in the box is the object number.
 
 <p align="center"><img src="README/demo4.png" width="190"></p>
 
