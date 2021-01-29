@@ -1,4 +1,4 @@
-# <img src="README/icon.png" width="20"> SiamBOMB
+# <img src="README/icon.png" width="25"> SiamBOMB
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg)](https://github.com/JackieZhai/SiamBOMB/blob/master/LICENSE)
 ![RepoSize](https://img.shields.io/github/repo-size/JackieZhai/SiamBOMB)
