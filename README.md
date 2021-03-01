@@ -14,7 +14,7 @@ All rights reserved.
 ## Introduction
 Our Demo Video: [https://youtu.be/lLIPdOsnzT8](https://youtu.be/lLIPdOsnzT8) or [https://www.bilibili.com/video/av92152869](https://www.bilibili.com/video/av92152869) \
 Our Paper (IJCAI 2020 Demo Track): [10.24963/ijcai.2020/776](https://www.ijcai.org/Proceedings/2020/0776.pdf) \
-Demo from [Ziegler et al.](https://zenodo.org/record/3608658), [Jhuang et al.](https://www.nature.com/articles/ncomms1064)
+Demo from [Ziegler et al.](https://zenodo.org/record/3608658), [Jhuang et al.](https://www.nature.com/articles/ncomms1064) (see [releases](https://github.com/JackieZhai/SiamBOMB/releases))
 
 <p align="center"><img src="README/demo.gif" width="500"></p>
 <p align="center"><img src="README/demore.gif" width="500"></p>
@@ -31,6 +31,7 @@ Demo from [Ziegler et al.](https://zenodo.org/record/3608658), [Jhuang et al.](h
 * GPU (at least have 4 GB memory).
 * CUDA 10.1 (with cuDNN).
 * Anaconda 4.8+ (or virtualenv etc.) and Python 3.6+.
+* C++ build tools (g++ in Linux or 2015+ in Windows).
 * Download .zip or `git clone` our code.
 ### 2. Install dependencies
 ```Shell
@@ -45,7 +46,7 @@ conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 pip install pyqt5-tools
 
 # install other packages
-pip install numpy opencv-python pyyaml yacs tqdm colorama matplotlib cython tensorboardX
+pip install numpy opencv-python pyyaml yacs tqdm colorama matplotlib cython tensorboardX imutils
 
 # build extensions
 python setup.py build_ext --inplace
