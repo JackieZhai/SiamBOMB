@@ -12,7 +12,7 @@ All rights reserved.
 <p align="center"><img src="README/affiliation.png" width="500"></p>
 
 ## Introduction
-News: Multi-animal Tracking Features is Comming!
+News: Multi-animal Tracking Features is Comming!\
 Our Demo Video: [https://youtu.be/lLIPdOsnzT8](https://youtu.be/lLIPdOsnzT8) or [https://www.bilibili.com/video/av92152869](https://www.bilibili.com/video/av92152869) \
 Our Paper (IJCAI 2020 Demo Track): [10.24963/ijcai.2020/776](https://www.ijcai.org/Proceedings/2020/0776.pdf) \
 Demo from [Ziegler et al.](https://zenodo.org/record/3608658), [Jhuang et al.](https://www.nature.com/articles/ncomms1064) (see [releases](https://github.com/JackieZhai/SiamBOMB/releases))
