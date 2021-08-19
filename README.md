@@ -7,7 +7,7 @@
 ![Commit](https://img.shields.io/github/last-commit/JackieZhai/SiamBOMB)
 
 This repo is preview version 1.0 of SiamBOMB, previous version in commit before March 2021.\
-Copyright \(c\) 2020 Institute of Automation, Chinese Academy of Sciences. 
+Copyright \(c\) 2021 Institute of Automation, Chinese Academy of Sciences. 
 All rights reserved.
 <p align="center"><img src="README/affiliation.png" width="500"></p>
 
