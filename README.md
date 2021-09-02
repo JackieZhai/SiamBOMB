@@ -19,7 +19,6 @@ Demo from [Ziegler et al.](https://zenodo.org/record/3608658), [Jhuang et al.](h
 
 <p align="center"><img src="README/demo.gif" width="500"></p>
 <p align="center"><img src="README/demore.gif" width="500"></p>
-<p align="center"><img src="README/demomul.gif" width="500"></p>
 
 1. This project is based on [PySOT](https://github.com/STVIR/pysot).
 2. We develop it with [PyQt5](https://www.riverbankcomputing.com/software/pyqt/intro).
