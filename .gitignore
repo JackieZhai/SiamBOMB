@@ -1,0 +1,11 @@
+*.idea
+*~
+*__pycache__*
+*.pyc
+*.pytest_cache
+*.ipynb_checkpoints/
+*.pth
+/data
+/results
+pyqt5/*.png
+pyqt5/*.qrc
