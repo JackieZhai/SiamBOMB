@@ -47,7 +47,6 @@ sudo apt-get install ninja-build libturbojpeg
 * SiamMask_E pretrained model: [Google Drive](https://drive.google.com/file/d/1VVpCAUJeysyRWdLdfW1IsT3AsQUQvwAU/view), 
 [Baidu Pan](https://pan.baidu.com/s/1q64A2jPEWmdj264XrfvhBA) (jffj) \
 into `pysot/experiments/siammaske_r50_l3/model.pth`
-into `https://drive.google.com/open?id=1nJTBxpuBhN0WGSvG7Zm3yBc9JAC6LnEn`
 * KYS pretrained model: [Google Drive](https://drive.google.com/open?id=1nJTBxpuBhN0WGSvG7Zm3yBc9JAC6LnEn)\
 into `pytracking/networks/kys.pth`
 * LWL pretrained model: [Google Drive](https://drive.google.com/file/d/1aAsj_N1LAMpmmcb1iOxo2z66tJM6MEuM/view?usp=sharing)\
