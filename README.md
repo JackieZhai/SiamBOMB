@@ -26,10 +26,20 @@ Our Paper (IJCAI 2020 Demo Track): [10.24963/ijcai.2020/776](https://www.ijcai.o
 * Anaconda 4.8+ (or virtualenv etc.) and Python 3.6+.
 * C++ build tools (g++ in Linux or 2015+ in Windows).
 * Download .zip or git clone our code.
-2. Install dependencies
 ### 2. Install dependencies
 ```Shell
-# TODO
+# create anaconda env
+conda create -n SiamBOMB python=3.7
+conda activate SiamBOMB
+
+# install the pytorch
+conda install pytorch torchvision cudatoolkit=11.1 -c pytorch -c conda-forge
+
+# install the pyqt5
+pip install pyqt5-tools
+
+# install other packages
+pip install numpy opencv-python pyyaml yacs tqdm colorama matplotlib cython tensorboardX imutils
 ```
 ### 3. Equip models
 A simple SiamMask_E pretrained model: \
