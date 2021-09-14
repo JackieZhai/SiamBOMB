@@ -39,7 +39,9 @@ conda install pytorch torchvision cudatoolkit=11.1 -c pytorch -c conda-forge
 pip install pyqt5-tools
 
 # install other packages
-pip install numpy opencv-python pyyaml yacs tqdm colorama matplotlib cython tensorboardX imutils
+pip install numpy opencv-python pyyaml yacs tqdm colorama matplotlib cython tensorboardX imutils pandas tb-nightly visdom scikit-image
+tikzplotlib spatial-correlation-sampler jpeg4py
+sudo apt-get install ninja-build libturbojpeg
 ```
 ### 3. Equip models
 A simple SiamMask_E pretrained model: \
