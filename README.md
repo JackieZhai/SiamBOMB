@@ -22,7 +22,11 @@ Our Paper (IJCAI 2020 Demo Track): [10.24963/ijcai.2020/776](https://www.ijcai.o
 ### 1. Configure environments
 * Linux (Ubuntu 18.04) or Windows (10).
 * GPU (at least have 4 GB memory).
-* TODO
+* CUDA 10.1, 10.2, 11.1, etc. (with cuDNN).
+* Anaconda 4.8+ (or virtualenv etc.) and Python 3.6+.
+* C++ build tools (g++ in Linux or 2015+ in Windows).
+* Download .zip or git clone our code.
+2. Install dependencies
 ### 2. Install dependencies
 ```Shell
 # TODO
