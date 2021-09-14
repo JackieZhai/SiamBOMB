@@ -6,7 +6,7 @@
 [![Release](https://img.shields.io/github/v/release/JackieZhai/SiamBOMB?include_prereleases&sort=semver)](https://github.com/JackieZhai/SiamBOMB/releases)
 [![Commit](https://img.shields.io/github/last-commit/JackieZhai/SiamBOMB)](https://github.com/JackieZhai/SiamBOMB/commits/20210919)
 
-This repo is second preview version of SiamBOMB, which is updating in September 2021.\
+This repo is the second preview version of SiamBOMB, which is updating in September 2021.\
 Copyright \(c\) 2021 Institute of Automation, Chinese Academy of Sciences. 
 All rights reserved.
 <p align="center"><img src=".github/README/affiliation.png" width="500"></p>
