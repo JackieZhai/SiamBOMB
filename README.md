@@ -29,11 +29,11 @@ Our Paper (IJCAI 2020 Demo Track): [10.24963/ijcai.2020/776](https://www.ijcai.o
 ### 2. Install dependencies
 ```Shell
 # create anaconda env
-conda create -n SiamBOMB python=3.7
+conda create -n SiamBOMB python=3.7 -y
 conda activate SiamBOMB
 
 # install the pytorch
-conda install pytorch torchvision cudatoolkit=11.1 -c pytorch -c conda-forge
+conda install pytorch torchvision cudatoolkit=11.1 -c pytorch -c conda-forge -y
 
 # install the pyqt5
 pip install pyqt5-tools
