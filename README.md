@@ -44,9 +44,18 @@ tikzplotlib spatial-correlation-sampler jpeg4py
 sudo apt-get install ninja-build libturbojpeg
 ```
 ### 3. Equip models
-A simple SiamMask_E pretrained model: \
-[Google Drive](https://drive.google.com/file/d/1VVpCAUJeysyRWdLdfW1IsT3AsQUQvwAU/view), [Baidu Pan](https://pan.baidu.com/s/1q64A2jPEWmdj264XrfvhBA) (key: jffj) \
-You need to copy it into `pysot/experiments/siammaske_r50_l3/`.
+* SiamMask_E pretrained model: [Google Drive](https://drive.google.com/file/d/1VVpCAUJeysyRWdLdfW1IsT3AsQUQvwAU/view), 
+[Baidu Pan](https://pan.baidu.com/s/1q64A2jPEWmdj264XrfvhBA) (jffj) \
+into `pysot/experiments/siammaske_r50_l3/model.pth`
+into `https://drive.google.com/open?id=1nJTBxpuBhN0WGSvG7Zm3yBc9JAC6LnEn`
+* KYS pretrained model: [Google Drive](https://drive.google.com/open?id=1nJTBxpuBhN0WGSvG7Zm3yBc9JAC6LnEn)\
+into `pytracking/networks/kys.pth`
+* LWL pretrained model: [Google Drive](https://drive.google.com/file/d/1aAsj_N1LAMpmmcb1iOxo2z66tJM6MEuM/view?usp=sharing)\
+into `pytracking/networks/lwl_boxinit.pth`
+* KeepTrack pretrained model: [Google Drive](https://drive.google.com/file/d/1JIhzF1yd1EFbVCKJMakqEjWngthySIS5)\
+into `pytracking/networks/keep_track.pth`\
+and base model: [Google Drive](https://drive.google.com/file/d/1lzwdeX9HBefQwznMaX5AKAGda7tqeQtg)\
+into `pytracking/networks/super_dimp_simple.pth`
 
 ## Citation
 ```
