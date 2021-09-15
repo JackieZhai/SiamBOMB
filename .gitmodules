@@ -1,3 +1,0 @@
-[submodule "pytracking/external/PreciseRoIPooling"]
-	path = pytracking/external/PreciseRoIPooling
-	url = https://github.com/vacancy/PreciseRoIPooling.git

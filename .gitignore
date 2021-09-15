@@ -7,5 +7,5 @@
 *.pth
 /data
 /results
-pyqt5/*.png
-pyqt5/*.qrc
+/SiamBOMB/pyqt5/*.png
+/SiamBOMB/pyqt5/*.qrc
