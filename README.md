@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/github/license/JackieZhai/SiamBOMB)](https://github.com/JackieZhai/SiamBOMB/blob/20210919/LICENSE)
 ![RepoSize](https://img.shields.io/github/repo-size/JackieZhai/SiamBOMB)
 ![CodeSize](https://img.shields.io/github/languages/code-size/JackieZhai/SiamBOMB)
-[![Release](https://img.shields.io/github/v/release/JackieZhai/SiamBOMB?include_prereleases&sort=semver)](https://github.com/JackieZhai/SiamBOMB/releases)
+[![PyPI](https://img.shields.io/pypi/v/SiamBOMB)](https://pypi.org/project/SiamBOMB)
 [![Commit](https://img.shields.io/github/last-commit/JackieZhai/SiamBOMB)](https://github.com/JackieZhai/SiamBOMB/commits/20210919)
 
 This repo is the second preview version of SiamBOMB, which is updating in September 2021.\
@@ -20,40 +20,24 @@ Our Paper (IJCAI 2020 Demo Track): [10.24963/ijcai.2020/776](https://www.ijcai.o
 
 ## Setup
 ### 1. Configure environments
-* Linux (Ubuntu 18.04) or Windows (10).
-* GPU (at least have 4 GB memory).
-* CUDA 10.1, 10.2, 11.1, etc. (with cuDNN).
-* Anaconda 4.8+ (or virtualenv etc.) and Python 3.6+.
-* C++ build tools (g++ in Linux or 2015+ in Windows).
-* Download .zip or git clone our code.
+TODO
 ### 2. Install dependencies
-```Shell
-# create anaconda env
-conda create -n SiamBOMB python=3.7
-conda activate SiamBOMB
-
-# install the pytorch
-conda install pytorch torchvision cudatoolkit=11.1 -c pytorch -c conda-forge
-
-# install the pyqt5
-pip install pyqt5-tools
-
-# install other packages
-pip install numpy opencv-python pyyaml yacs tqdm colorama matplotlib cython tensorboardX imutils pandas tb-nightly visdom scikit-image
-tikzplotlib spatial-correlation-sampler jpeg4py
-sudo apt-get install ninja-build libturbojpeg
-```
+TODO
 ### 3. Equip models
 * SiamMask_E pretrained model: [Google Drive](https://drive.google.com/file/d/1VVpCAUJeysyRWdLdfW1IsT3AsQUQvwAU/view), 
 [Baidu Pan](https://pan.baidu.com/s/1q64A2jPEWmdj264XrfvhBA) (jffj) \
 into `pysot/experiments/siammaske_r50_l3/model.pth`
-* KYS pretrained model: [Google Drive](https://drive.google.com/open?id=1nJTBxpuBhN0WGSvG7Zm3yBc9JAC6LnEn)\
+* KYS pretrained model: [Google Drive](https://drive.google.com/open?id=1nJTBxpuBhN0WGSvG7Zm3yBc9JAC6LnEn), 
+[Baidu Pan](https://pan.baidu.com/s/1el4NGj9LYn3lF_FNZv4Xig) (bf3u)\
 into `pytracking/networks/kys.pth`
-* LWL pretrained model: [Google Drive](https://drive.google.com/file/d/1aAsj_N1LAMpmmcb1iOxo2z66tJM6MEuM/view?usp=sharing)\
+* LWL pretrained model: [Google Drive](https://drive.google.com/file/d/1aAsj_N1LAMpmmcb1iOxo2z66tJM6MEuM/view?usp=sharing), 
+[Baidu Pan](https://pan.baidu.com/s/1Xu79riptlOLorp0w3uQ3jw) (w244)\
 into `pytracking/networks/lwl_boxinit.pth`
-* KeepTrack pretrained model: [Google Drive](https://drive.google.com/file/d/1JIhzF1yd1EFbVCKJMakqEjWngthySIS5)\
+* KeepTrack pretrained model: [Google Drive](https://drive.google.com/file/d/1JIhzF1yd1EFbVCKJMakqEjWngthySIS5), 
+[Baidu Pan](https://pan.baidu.com/s/1W5Xxwrxl2Bge9nB1qWY2SQ) (g92v)\
 into `pytracking/networks/keep_track.pth`\
-and base model: [Google Drive](https://drive.google.com/file/d/1lzwdeX9HBefQwznMaX5AKAGda7tqeQtg)\
+and base model: [Google Drive](https://drive.google.com/file/d/1lzwdeX9HBefQwznMaX5AKAGda7tqeQtg), 
+[Baidu Pan](https://pan.baidu.com/s/1w1-0kSRq1X2zu-k1mAqsoQ) (zylv)\
 into `pytracking/networks/super_dimp_simple.pth`
 
 ## Citation
