@@ -42,8 +42,8 @@ conda activate SiamBOMB
 conda install pyqt=5 -y
 
 # install other packages
-pip install numpy opencv-python pyyaml yacs tqdm colorama matplotlib cython tensorboardX imutils pandas tb-nightly visdom scikit-image
-tikzplotlib 
+# pip install numpy opencv-python pyyaml yacs tqdm colorama matplotlib cython tensorboardX imutils pandas tb-nightly visdom scikit-image tikzplotlib
+pip install SiamBOMB
 pip install spatial-correlation-sampler jpeg4py
 sudo apt-get install libturbojpeg
 ```
