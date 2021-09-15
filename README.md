@@ -38,12 +38,13 @@ conda activate SiamBOMB
 * 
 ```Shell
 # install the pyqt5
-pip install pyqt5-tools
+# pip install pyqt5-tools
 conda install pyqt=5 -y
 
 # install other packages
 pip install numpy opencv-python pyyaml yacs tqdm colorama matplotlib cython tensorboardX imutils pandas tb-nightly visdom scikit-image
-tikzplotlib spatial-correlation-sampler jpeg4py
+tikzplotlib 
+pip install spatial-correlation-sampler jpeg4py
 sudo apt-get install libturbojpeg
 ```
 ### 3. Equip models
