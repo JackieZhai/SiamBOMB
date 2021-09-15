@@ -35,15 +35,14 @@ conda activate SiamBOMB
 ```
 * PyTorch (see https://pytorch.org/get-started/locally).
 ### 2. Install dependencies
-* 
 ```Shell
 # install the pyqt5
-# pip install pyqt5-tools
 conda install pyqt=5 -y
 
 # install other packages
-# pip install numpy opencv-python pyyaml yacs tqdm colorama matplotlib cython tensorboardX imutils pandas tb-nightly visdom scikit-image tikzplotlib
-pip install SiamBOMB
+pip install numpy opencv-python pyyaml yacs tqdm colorama matplotlib cython tensorboardX imutils pandas tb-nightly visdom scikit-image tikzplotlib
+
+# install optional packages
 pip install spatial-correlation-sampler jpeg4py
 sudo apt-get install libturbojpeg
 ```
