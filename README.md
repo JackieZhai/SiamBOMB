@@ -16,8 +16,6 @@ Our Paper (IJCAI 2020 Demo Track): [10.24963/ijcai.2020/776](https://www.ijcai.o
 
 <p align="center"><img src=".github/README/demo.png" width="500"></p>
 
-1. TODO
-
 ## Setup
 ### 1. Configure environments
 TODO
