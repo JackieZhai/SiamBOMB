@@ -25,7 +25,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     python_requires=">=3.6",
     package_data={
-        "": ["*.json", "*.qss", "*.yaml", "*.pth"]
+        "": ["*.json", "*.qss", "*.yaml"]
     },
     install_requires=[
         "numpy",
