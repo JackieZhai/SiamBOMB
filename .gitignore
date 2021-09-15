@@ -7,5 +7,7 @@
 *.pth
 /data
 /results
+/dist
+/SiamBOMB.egg-info
 /SiamBOMB/pyqt5/*.png
 /SiamBOMB/pyqt5/*.qrc
