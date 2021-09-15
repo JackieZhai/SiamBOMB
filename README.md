@@ -20,28 +20,31 @@ Our Paper (IJCAI 2020 Demo Track): [10.24963/ijcai.2020/776](https://www.ijcai.o
 
 ## Setup
 ### 1. Configure environments
-* Linux (Ubuntu 18.04) or Windows (10).
-* GPU (at least have 4 GB memory).
+* Linux (Ubuntu 18.04 or higher) or Windows (10).
+* C++ build tools (g++ / 2015+ and ninja).
+```Shell
+# for ubuntu 18+
+sudo apt install build-essential ninja-build
+```
 * CUDA 10.1, 10.2, 11.1, etc. (with cuDNN).
 * Anaconda 4+ (or virtualenv etc.) and Python 3.6+.
-* C++ build tools (g++ in Linux or 2015+ in Windows).
-* Download .zip or git clone our code.
-### 2. Install dependencies
 ```Shell
 # create anaconda env
 conda create -n SiamBOMB python=3.7 -y
 conda activate SiamBOMB
-
-# install the pytorch
-conda install pytorch torchvision cudatoolkit=11.1 -c pytorch -c conda-forge -y
-
+```
+* PyTorch (see https://pytorch.org/get-started/locally).
+### 2. Install dependencies
+* 
+```Shell
 # install the pyqt5
 pip install pyqt5-tools
+conda install pyqt=5 -y
 
 # install other packages
 pip install numpy opencv-python pyyaml yacs tqdm colorama matplotlib cython tensorboardX imutils pandas tb-nightly visdom scikit-image
 tikzplotlib spatial-correlation-sampler jpeg4py
-sudo apt-get install ninja-build libturbojpeg
+sudo apt-get install libturbojpeg
 ```
 ### 3. Equip models
 * SiamMask_E pretrained model: [Google Drive](https://drive.google.com/file/d/1VVpCAUJeysyRWdLdfW1IsT3AsQUQvwAU/view), 
