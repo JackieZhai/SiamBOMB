@@ -1,0 +1,6 @@
+{
+    "SiamMask_E": ["trace", "bbox", "mask"],
+    "KYS": ["trace", "bbox"],
+    "LWL": ["trace", "bbox", "mask"],
+    "KeepTrack": ["trace", "bbox"]
+}

@@ -1,0 +1,13 @@
+*.idea
+*~
+*__pycache__*
+*.pyc
+*.pytest_cache
+*.ipynb_checkpoints/
+*.pth
+/data
+/results
+/dist
+/SiamBOMB.egg-info
+/SiamBOMB/pyqt5/*.png
+/SiamBOMB/pyqt5/*.qrc
