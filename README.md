@@ -4,7 +4,6 @@
 ![RepoSize](https://img.shields.io/github/repo-size/JackieZhai/SiamBOMB)
 ![CodeSize](https://img.shields.io/github/languages/code-size/JackieZhai/SiamBOMB)
 [![PyPI](https://img.shields.io/pypi/v/SiamBOMB)](https://pypi.org/project/SiamBOMB)
-[![Release](https://img.shields.io/github/v/release/JackieZhai/SiamBOMB?include_prereleases&sort=semver)](https://github.com/JackieZhai/SiamBOMB/releases)
 [![Commit](https://img.shields.io/github/last-commit/JackieZhai/SiamBOMB)](https://github.com/JackieZhai/SiamBOMB/commits/20210919)
 
 This repo is the second preview version of SiamBOMB, which is updating in September 2021.\
