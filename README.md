@@ -20,9 +20,19 @@ Our Paper (IJCAI 2020 Demo Track): [10.24963/ijcai.2020/776](https://www.ijcai.o
 ## Setup
 ### 1. Configure environments
 TODO
+```Shell
+conda create -n SiamBOMB python=3.7
+conda activate SiamBOMB
+```
 ### 2. Install dependencies
 TODO
+```Shell
+pip install --upgrade SiamBOMB
+```
 ### 3. Equip models
+```Shell
+python -m SiamBOMB.downloader
+```
 * SiamMask_E pretrained model: [Google Drive](https://drive.google.com/u/0/uc?id=1VVpCAUJeysyRWdLdfW1IsT3AsQUQvwAU), 
 [Baidu Pan](https://pan.baidu.com/s/1q64A2jPEWmdj264XrfvhBA) (jffj) \
 into `pysot/experiments/siammaske_r50_l3/model.pth`
@@ -38,6 +48,12 @@ into `pytracking/networks/keep_track.pth`\
 and its base model: [Google Drive](https://drive.google.com/u/0/uc?id=1cRgzZ0MFFeE2PaZL3BWbYXu9Aq73f-TR), 
 [Baidu Pan](https://pan.baidu.com/s/1w1-0kSRq1X2zu-k1mAqsoQ) (zylv)\
 into `pytracking/networks/super_dimp_simple.pth`
+
+## Demonstration
+TODO
+```Shell
+python -m SiamBOMB.launcher
+```
 
 ## Citation
 ```
