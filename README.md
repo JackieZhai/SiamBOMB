@@ -30,9 +30,11 @@ TODO
 pip install --upgrade SiamBOMB
 ```
 ### 3. Equip models
+Automatically, (with gdown from [Google Drive](https://drive.google.com))
 ```Shell
 python -m SiamBOMB.downloader
 ```
+Or manually,
 * SiamMask_E pretrained model: [Google Drive](https://drive.google.com/u/0/uc?id=1VVpCAUJeysyRWdLdfW1IsT3AsQUQvwAU), 
 [Baidu Pan](https://pan.baidu.com/s/1q64A2jPEWmdj264XrfvhBA) (jffj) \
 into `pysot/experiments/siammaske_r50_l3/model.pth`
