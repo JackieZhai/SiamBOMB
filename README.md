@@ -51,6 +51,8 @@ and its base model: [Google Drive](https://drive.google.com/u/0/uc?id=1cRgzZ0MFF
 [Baidu Pan](https://pan.baidu.com/s/1w1-0kSRq1X2zu-k1mAqsoQ) (zylv)\
 into `pytracking/networks/super_dimp_simple.pth`
 
+You can download several of them on demand.
+
 ## Demonstration
 TODO
 ```Shell
