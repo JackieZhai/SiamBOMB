@@ -3,6 +3,7 @@
 # See Corresponding LICENSE, All Right Reserved.
 # 
 
+from SiamBOMB.sots.run_video import track_video
 from os import path
 import time
 import importlib
@@ -14,6 +15,7 @@ import cv2
 from numpy.lib.npyio import loads
 import torch
 from collections import OrderedDict
+from easydict import EasyDict
 
 from PyQt5.QtWidgets import QApplication, QFileDialog, QMessageBox
 from PyQt5.QtGui import QPixmap, QCursor
@@ -82,6 +84,66 @@ class ComboBoxThread(QThread):
         else:
             raise ValueError('Unknown multi object mode {}'.format(multiobj_mode))
 
+    def _sots_init(self, tracker_name):
+        # Import depending packages
+        from ..sots.lib.models import models
+        from ..sots.lib.tracker.siamfc import SiamFC
+        from ..sots.lib.tracker.ocean import Ocean
+        from ..sots.lib.tracker.oceanplus import OceanPlus
+        from ..sots.lib.tracker.online import ONLINE
+        from ..sots.lib.tracker.multiple_tracker import MultiTracker
+        from ..sots.lib.utils.utils import load_pretrain
+        info = EasyDict()
+        info.epoch_test = False
+        info.align = False
+        online_tracker = None
+        root_dir = path.join(path.dirname(path.dirname(path.abspath(__file__))), 'sots')
+        # Configures here use the test code on 'VOT' datasets
+        if tracker_name == 'SiamDW':
+            info.arch = 'SiamDW'
+            info.resume = path.join(root_dir, 'snapshot/siamdw_res22w.pth')
+            info.dataset = 'VOT2019'
+            info.online = False
+            siam_tracker = SiamFC(info)
+            siam_net = models.__dict__[info.arch]()
+        elif tracker_name == 'OceanV':
+            info.arch = 'Ocean'
+            info.resume = path.join(root_dir, 'snapshot/OceanV.pth')
+            info.dataset = 'VOT2019'
+            info.online = False
+            siam_tracker = Ocean(info)
+            siam_net = models.__dict__[info.arch](align=info.align, online=info.online)
+        elif tracker_name == 'OceanVon':
+            info.arch = 'Ocean'
+            info.resume = path.join(root_dir, 'snapshot/OceanV19on.pth')
+            info.dataset = 'VOT2019'
+            info.online = True
+            siam_tracker = Ocean(info)
+            siam_net = models.__dict__[info.arch](align=info.align, online=info.online)
+            online_tracker = ONLINE(info)
+        elif tracker_name == 'OceanPlusMSS':
+            info.arch = 'OceanPlus'
+            info.resume = path.join(root_dir, 'snapshot/OceanPlusMSS.pth')
+            info.dataset = 'VOT2020'
+            info.mms = False
+            info.online = False
+            siam_tracker = OceanPlus(info)
+            siam_net = models.__dict__[info.arch](online=info.online, mms=info.mms)
+        elif tracker_name == 'OceanPlusMMS':
+            info.arch = 'OceanPlus'
+            info.resume = path.join(root_dir, 'snapshot/OceanPlusMMS.pth')
+            info.dataset = 'VOT2020'
+            info.mms = True
+            info.online = False
+            siam_tracker = OceanPlus(info)
+            siam_net = models.__dict__[info.arch](online=info.online, mms=info.mms)
+        else:
+            raise Exception('Unknown tracker name in SOTS')
+        siam_net = load_pretrain(siam_net, info.resume)
+        siam_net.eval()
+        siam_net = siam_net.cuda()
+        self.mainWin.tracker = MultiTracker(siam_tracker, online_tracker, siam_net, info)            
+
     def run(self):
         self.progressSignal.emit(0)
         # Initialize trackers
@@ -110,6 +172,11 @@ class ComboBoxThread(QThread):
             tracker_name = 'keep_track'
             parameter_name = 'default_fast'
             self._pytracking_init(tracker_name, parameter_name)
+            self.progressSignal.emit(100)
+        elif self.mainWin.model_name in \
+            ['SiamDW', 'OceanV', 'OceanVon', 'OceanPlusMSS', 'OceanPlusMMS']:
+            self.progressSignal.emit(10)
+            self._sots_init(self.mainWin.model_name)
             self.progressSignal.emit(100)
         else:
             self.progressSignal.emit(-1)
@@ -518,16 +585,24 @@ class SiamBOMBWindow(BaseWindow):
                         frame = overlay_mask(frame, out['segmentation'])
                     if 'target_polygon' in out:
                         for obj_id, state in out['target_polygon'].items():
-                            state = [int(s) for s in state]
-                            polygon = np.array(state).astype(np.int32)
-                            cv2.polylines(frame, [polygon.reshape((-1, 1, 2))], \
-                                True, (0, 255, 0), 2)
-                            polygon_xmean = (polygon[0] + polygon[2] + polygon[4] + polygon[6]) / 4
-                            polygon_ymean = (polygon[1] + polygon[3] + polygon[5] + polygon[7]) / 4
+                            if type(state[0]) == tuple:
+                                polygon = np.array(state).astype(np.int32)
+                                cv2.polylines(frame, [polygon.reshape((-1, 1, 2))], \
+                                    True, (0, 255, 0), 3)
+                                polygon_xmean, polygon_ymean = np.mean(polygon, axis=0).tolist()
+                                cv2.putText(frame, str(obj_id), (polygon[3,0], polygon[3,1]), \
+                                    cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+                            else:
+                                state = [int(s) for s in state]
+                                polygon = np.array(state).astype(np.int32)
+                                cv2.polylines(frame, [polygon.reshape((-1, 1, 2))], \
+                                    True, (0, 255, 0), 2)
+                                polygon_xmean = (polygon[0] + polygon[2] + polygon[4] + polygon[6]) / 4
+                                polygon_ymean = (polygon[1] + polygon[3] + polygon[5] + polygon[7]) / 4
+                                cv2.putText(frame, str(obj_id), (polygon[6], polygon[7]), \
+                                    cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
                             cv2.rectangle(frame, (int(polygon_xmean) - 1, int(polygon_ymean) - 1), \
                                 (int(polygon_xmean) + 1, int(polygon_ymean) + 1), (0, 255, 0), 2)
-                            cv2.putText(frame, str(obj_id), (polygon[6], polygon[7]), \
-                                cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
                     elif 'target_bbox' in out:
                         for obj_id, state in out['target_bbox'].items():
                             state = [int(s) for s in state]

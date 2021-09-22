@@ -2,6 +2,9 @@
 # GitHub: JackieZhai @ MiRA, CASIA, Beijing, China
 # See Corresponding LICENSE, All Right Reserved.
 # 
+# pretrain models from pysot, pytracking, 
+# sots, stack and lighttrack.
+# 
 
 import sys
 from os import path

@@ -2,5 +2,10 @@
     "SiamMask_E": ["trace", "bbox", "mask"],
     "KYS": ["trace", "bbox"],
     "LWL": ["trace", "bbox", "mask"],
-    "KeepTrack": ["trace", "bbox"]
+    "KeepTrack": ["trace", "bbox"],
+    "SiamDW": ["trace", "bbox"],
+    "OceanV": ["trace", "bbox"],
+    "OceanVon": ["trace", "bbox"],
+    "OceanPlusMSS": ["trace", "bbox", "mask"],
+    "OceanPlusMMS": ["trace", "bbox", "mask"]
 }

@@ -1,0 +1,5 @@
+OceanV.pth: offline model for VOT
+OceanG.pth: offline model for GOT10K
+OceanL.pth: offline model for LASOT
+OceanNoOA.pth: offline model without object-aware branch
+OceanVxxon.pth: online model for VOT

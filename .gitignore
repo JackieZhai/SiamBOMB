@@ -5,9 +5,16 @@
 *.pytest_cache
 *.ipynb_checkpoints/
 *.pth
+*.pth.tar
+*.pt
+*.onnx
+*.model
+*.mp4
 /data
 /results
 /dist
 /SiamBOMB.egg-info
 /SiamBOMB/pyqt5/*.png
 /SiamBOMB/pyqt5/*.qrc
+/SiamBOMB/vis
+/SiamBOMB/debug

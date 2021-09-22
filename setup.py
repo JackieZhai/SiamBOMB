@@ -1,3 +1,12 @@
+# 
+# GitHub: JackieZhai @ MiRA, CASIA, Beijing, China
+# See Corresponding LICENSE, All Right Reserved.
+# 
+# setup pypi package based on
+# pysot, pytracking, sots, stack and lighttrack.
+# See Corresponding CONTRIBUTING, Please contact if any conflicts.
+# 
+
 import setuptools
 
 with open("README.md", "r", encoding="utf-8") as fh:
@@ -5,7 +14,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="SiamBOMB",
-    version="0.0.4",
+    version="0.0.5",
     author="JackieZhai",
     author_email="jackieturing@gmail.com",
     description="SiamBOMB: Siamese network using Background information for real-time Online Multi-species home-cage animal Behavioral analysis",
@@ -43,6 +52,7 @@ setuptools.setup(
         "visdom",
         "tb-nightly",
         "tikzplotlib", 
-        "gdown"
+        "gdown", 
+        "timm"
     ]
 )
