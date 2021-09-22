@@ -3,7 +3,6 @@
 # See Corresponding LICENSE, All Right Reserved.
 # 
 
-from SiamBOMB.sots.run_video import track_video
 from os import path
 import time
 import importlib
@@ -25,8 +24,8 @@ from .window_base import BaseWindow
 from .window_configure import ConfigWindow
 from ..pytracking.utils.plotting import overlay_mask
 
-checkBoxcheckState = False
 
+checkBoxcheckState = False  # previous bug, need to fix
 
 class ComboBoxThread(QThread):
     def __init__(self, mainWin, progressSignal, parent=None):
@@ -98,6 +97,7 @@ class ComboBoxThread(QThread):
         info.align = False
         online_tracker = None
         root_dir = path.join(path.dirname(path.dirname(path.abspath(__file__))), 'sots')
+        self.progressSignal.emit(20)
         # Configures here use the test code on 'VOT' datasets
         if tracker_name == 'SiamDW':
             info.arch = 'SiamDW'
@@ -139,9 +139,12 @@ class ComboBoxThread(QThread):
             siam_net = models.__dict__[info.arch](online=info.online, mms=info.mms)
         else:
             raise Exception('Unknown tracker name in SOTS')
+        self.progressSignal.emit(40)
         siam_net = load_pretrain(siam_net, info.resume)
+        self.progressSignal.emit(60)
         siam_net.eval()
         siam_net = siam_net.cuda()
+        self.progressSignal.emit(80)
         self.mainWin.tracker = MultiTracker(siam_tracker, online_tracker, siam_net, info)            
 
     def run(self):

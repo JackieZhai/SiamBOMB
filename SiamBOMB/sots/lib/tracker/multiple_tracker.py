@@ -153,7 +153,7 @@ class MultiTracker:
             if self.cfg.arch == 'OceanPlus':
                 mask_gt = None
                 out = self.trackers[obj_id].init(image, target_pos, target_sz, self.siam_net, \
-                    online=self.cfg.online, mask=mask_gt, debug=True)  # init tracker
+                    online=self.cfg.online, mask=mask_gt, debug=False)  # init tracker
             else:
                 out = self.trackers[obj_id].init(image, target_pos, target_sz, self.siam_net)  # init tracker
             if self.cfg.online:
@@ -208,7 +208,7 @@ class MultiTracker:
                     if self.cfg.arch == 'OceanPlus':
                         mask_gt = None
                         out = self.trackers[obj_id].init(image, target_pos, target_sz, self.siam_net, \
-                            online=self.cfg.online, mask=mask_gt, debug=True)  # init tracker
+                            online=self.cfg.online, mask=mask_gt, debug=False)  # init tracker
                     else:
                         out = self.trackers[obj_id].init(image, target_pos, target_sz, self.siam_net)  # init tracker
                     if self.cfg.online:
@@ -252,7 +252,7 @@ class MultiTracker:
                 if self.cfg.arch == 'OceanPlus':
                     mask_gt = None
                     out = self.trackers[obj_id].init(image, target_pos, target_sz, self.siam_net, \
-                        online=self.cfg.online, mask=mask_gt, debug=True)  # init tracker
+                        online=self.cfg.online, mask=mask_gt, debug=False)  # init tracker
                 else:
                     out = self.trackers[obj_id].init(image, target_pos, target_sz, self.siam_net)  # init tracker
                 if self.cfg.online:

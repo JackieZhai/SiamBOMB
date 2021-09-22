@@ -3,7 +3,7 @@ import torch
 import torch.nn.functional as F
 import math
 import time
-from pytracking import dcf, TensorList
+from ....pytracking import dcf, TensorList
 from ...features.preprocessing import numpy_to_torch
 from ...utils.plotting import show_tensor, plot_graph
 from ...features.preprocessing import sample_patch_multiscale, sample_patch_transformed

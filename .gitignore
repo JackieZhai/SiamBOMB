@@ -10,6 +10,7 @@
 *.onnx
 *.model
 *.mp4
+*.zip
 /data
 /results
 /dist
