@@ -7,7 +7,7 @@
 [![Release](https://img.shields.io/github/v/release/JackieZhai/SiamBOMB?include_prereleases&sort=semver)](https://github.com/JackieZhai/SiamBOMB/releases)
 [![Commit](https://img.shields.io/github/last-commit/JackieZhai/SiamBOMB)](https://github.com/JackieZhai/SiamBOMB/commits/20210919)
 
-This repo is the second preview version of SiamBOMB, which is updating in September 2021.\
+This repo is the third preview version of SiamBOMB, which wil be updated until the end of 2021.\
 Copyright \(c\) 2021 Institute of Automation, Chinese Academy of Sciences. 
 All rights reserved.
 <p align="center"><img src=".github/README/affiliation.png" width="500"></p>
@@ -30,9 +30,11 @@ TODO
 pip install --upgrade SiamBOMB
 ```
 ### 3. Equip models
+Automatically, (with gdown from [Google Drive](https://drive.google.com))
 ```Shell
 python -m SiamBOMB.downloader
 ```
+Or manually,
 * SiamMask_E pretrained model: [Google Drive](https://drive.google.com/u/0/uc?id=1VVpCAUJeysyRWdLdfW1IsT3AsQUQvwAU), 
 [Baidu Pan](https://pan.baidu.com/s/1q64A2jPEWmdj264XrfvhBA) (jffj) \
 into `pysot/experiments/siammaske_r50_l3/model.pth`
@@ -48,6 +50,8 @@ into `pytracking/networks/keep_track.pth`\
 and its base model: [Google Drive](https://drive.google.com/u/0/uc?id=1cRgzZ0MFFeE2PaZL3BWbYXu9Aq73f-TR), 
 [Baidu Pan](https://pan.baidu.com/s/1w1-0kSRq1X2zu-k1mAqsoQ) (zylv)\
 into `pytracking/networks/super_dimp_simple.pth`
+
+You can download several of them on demand.
 
 ## Demonstration
 TODO
