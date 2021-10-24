@@ -8,8 +8,7 @@
 [![Commit](https://img.shields.io/github/last-commit/JackieZhai/SiamBOMB)](https://github.com/JackieZhai/SiamBOMB/commits/20210919)
 
 This repo is the third preview version of SiamBOMB, which wil be updated until the end of 2021.\
-Copyright \(c\) 2021 Institute of Automation, Chinese Academy of Sciences. 
-All rights reserved.
+Team of MiRA, Institute of Automation, CAS. <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a> All rights reserved.
 <p align="center"><img src=".github/README/affiliation.png" width="500"></p>
 
 ## Introduction
