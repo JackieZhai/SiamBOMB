@@ -1,11 +1,10 @@
 # <img src=".github/README/icon.png" width="22"> SiamBOMB
 
-[![License](https://img.shields.io/github/license/JackieZhai/SiamBOMB)](https://github.com/JackieZhai/SiamBOMB/blob/20210919/LICENSE)
+[![Commit](https://img.shields.io/github/last-commit/JackieZhai/SiamBOMB)](https://github.com/JackieZhai/SiamBOMB/commits/20210919)
 ![RepoSize](https://img.shields.io/github/repo-size/JackieZhai/SiamBOMB)
 ![CodeSize](https://img.shields.io/github/languages/code-size/JackieZhai/SiamBOMB)
 [![PyPI](https://img.shields.io/pypi/v/SiamBOMB)](https://pypi.org/project/SiamBOMB)
 [![Release](https://img.shields.io/github/v/release/JackieZhai/SiamBOMB?include_prereleases&sort=semver)](https://github.com/JackieZhai/SiamBOMB/releases)
-[![Commit](https://img.shields.io/github/last-commit/JackieZhai/SiamBOMB)](https://github.com/JackieZhai/SiamBOMB/commits/20210919)
 
 This repo is the third preview version of SiamBOMB, which wil be updated until the end of 2021.\
 Team of MiRA, Institute of Automation, CAS. <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a> All rights reserved.
