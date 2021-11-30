@@ -10,11 +10,6 @@ This repo is the third preview version of SiamBOMB, which wil be updated until t
 Team of MiRA, Institute of Automation, CAS. <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a> All rights reserved.
 <p align="center"><img src=".github/README/affiliation.png" width="500"></p>
 
-## Introduction
-Our Paper (IJCAI 2020 Demo Track): [10.24963/ijcai.2020/776](https://www.ijcai.org/Proceedings/2020/0776.pdf)
-
-<p align="center"><img src=".github/README/demo.png" width="500"></p>
-
 ## Setup
 ### 1. Configure environments
 TODO
