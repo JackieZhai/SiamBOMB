@@ -6,7 +6,8 @@
 [![PyPI](https://img.shields.io/pypi/v/SiamBOMB)](https://pypi.org/project/SiamBOMB)
 [![Release](https://img.shields.io/github/v/release/JackieZhai/SiamBOMB?include_prereleases&sort=semver)](https://github.com/JackieZhai/SiamBOMB/releases)
 
-This repo is the third preview version of SiamBOMB, which wil be updated until the end of 2021.\
+This repo is the third preview version of SiamBOMB in 2021.\
+Please rather check our latest version at the repo [InteBOMB](https://github.com/JackieZhai/InteBOMB).\
 Team of MiRA, Institute of Automation, CAS. <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a> All rights reserved.
 <p align="center"><img src=".github/README/affiliation.png" width="500"></p>
 
@@ -17,13 +18,11 @@ Our Paper (IJCAI 2020 Demo Track): [10.24963/ijcai.2020/776](https://www.ijcai.o
 
 ## Setup
 ### 1. Configure environments
-TODO
 ```Shell
 conda create -n SiamBOMB python=3.7
 conda activate SiamBOMB
 ```
 ### 2. Install dependencies
-TODO
 ```Shell
 pip install --upgrade SiamBOMB
 ```
@@ -52,7 +51,6 @@ into `pytracking/networks/super_dimp_simple.pth`
 You can download several of them on demand.
 
 ## Demonstration
-TODO
 ```Shell
 python -m SiamBOMB.launcher
 ```
